@@ -50,31 +50,31 @@ export default function LibretaNotas() {
         <textarea
           value={textoNota}
           onChange={(e) => setTextoNota(e.target.value)}
-          rows={3}
+          rows={4}
           className="w-full p-2 border rounded mb-2"
           placeholder="Escribe tu nota aquí..."
         />
 
-        <button onClick={agregarNota} className="bg-blue-500 text-white px-4 py-2 rounded">
+        <button onClick={agregarNota} className="bg-blue-600 text-white px-4 py-2 rounded">
           Agregar Nota
         </button>
 
         <div className="mt-4 space-y-4">
           {(notas[letraSeleccionada] || []).map((nota, i) => (
             <div key={i} className={`p-4 rounded shadow ${nota.color}`}>
-              <div className="text-sm text-gray-600">{nota.fecha}</div>
+              <div className="text-sm text-gray-700 mb-1">{nota.fecha}</div>
               <div>{nota.texto}</div>
             </div>
           ))}
         </div>
       </main>
 
-      <aside className="w-16 bg-gray-100 p-2 flex flex-col items-center space-y-2 overflow-y-auto">
+      <aside className="w-16 bg-gray-200 p-2 flex flex-col items-center space-y-2 overflow-y-auto">
         {letras.map((l, i) => (
           <button
             key={l}
             onClick={() => setLetraSeleccionada(l)}
-            className={`w-10 h-10 rounded-full font-bold text-white ${
+            className={`w-10 h-10 flex items-center justify-center text-white font-bold rounded-full ${
               letraSeleccionada === l ? "ring-2 ring-black" : ""
             } ${colores[i % colores.length]}`}
           >
