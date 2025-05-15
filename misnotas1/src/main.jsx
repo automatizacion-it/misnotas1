@@ -1,10 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import LibretaNotas from './App'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import LibretaNotas from './App.jsx';
+import './index.css'; // <- Importante para aplicar Tailwind
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <LibretaNotas />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
